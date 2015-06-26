@@ -1,0 +1,32 @@
+*{
+  background-color: #272D2D;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+label{
+  margin-bottom: 20px;
+}
+
+.login{
+  max-width: 10vw;
+  min-width: 320px;
+  margin:auto;
+  overflow: hidden;
+  box-shadow: 0 0 0 0.5(rgba(255, 0, 0, 0.5);)
+}
+
+button{
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #E6FDFF;
+  color: black;
+}
+.menu{
+  margin-right: 30px;
+  background-color: #E6FDFF;
+  height: 100%;
+  width: 10%;
+}
