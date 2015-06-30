@@ -61,9 +61,7 @@ label{
   flex-basis: 20em;
 }
 
-.wiki+label{
-  transition: all 1s ease;
-}
+
 
 .name {
   font-size: 3em;
