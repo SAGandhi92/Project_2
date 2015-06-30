@@ -9,7 +9,34 @@
     <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
   </head>
   <body>
+    <input type="text" id="search-bar" placeholder="enter search"/>
+
+    <script type="text/javascript">
+
+    $('input').keyup(function(event){
+      event.preventDefault();
+      var search =$(this).val();
+      $('#text').html(search);
+      $.ajax({
+        url: 'mongodb://localhost:27017/wiki_db',
+        method:"GET",
+        data: { s:search},
+        success: function(data, status, jqXHR){
+          var newText="";
+          for(i=0; i<data.Search.length; i++){
+            newText += 'mongodb://localhost:27017/wiki_db'+'data.Search[i].mongodb+""'>'+data.Search[i].Title+'</a><br>;
+          },
+          $("#text").html(newText);
+        },
+
+        error: function(jqXHR, status, error){
+        }
+      });
+    })
+    </script>
+
     <header>
+      <h1 class="wiki">Wiki</h1>
       <div id="nav-button">
         <span></span>
         <span></span>
@@ -35,7 +62,7 @@
             </ul>
           </li>
           <li><a href="#">Random Article</a></li>
-          <!-- <li><a href="/users/login">Log In</a></li> -->
+        <!-- <li><a href="/users/login">Log In</a></li> -->
         </ul>
       </div>
     </header>

@@ -43,6 +43,11 @@ label{
   color:black;
 }
 
+.search-bar{
+  box-sizing: border-box;
+  margin:0 auto;
+}
+
 
 .wiki{
   display:flex;
