@@ -1,13 +1,27 @@
-<form action="/users" method="post">
-  <input type="email"
-         name="user[email]"
-         placeholder="email address">
-  <input type="password"
-         name="user[password]"
-         placeholder="password">
-  <input type="password"
-         name="user[passwordConfirmation]"
-         placeholder="confirm password">
-  <input type="submit"
-         value="Sign up!">
-</form>
+<div class="container">
+  <div id="main-new-user">
+    <div id="main">
+      <form action="/users" method="post">
+        <label>Username</label></br>
+        <input type="text"
+               name="user[username]"
+        placeholder="Enter your username"></br>
+        <label>Email</label></br>
+        <input type="text"
+               name="user[email]"
+        placeholder="Enter your email"></br>
+        <label>Password</label></br>
+        <input type="text"
+               name="user[password]"
+        placeholder="Enter your password">
+        <input type="submit"
+              value="Sign Up">
+      </form>
+    </div>
+  </div>
+</div>
+<footer>
+<div class="message">
+  <h1><%= message %></h1>
+</div>
+</footer>

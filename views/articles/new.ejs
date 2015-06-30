@@ -1,0 +1,42 @@
+<div class="container">
+  <div id="main-new-art">
+    <form action="/articles/:title" method="post">
+      <label>Title</label></br>
+      <input type="text"
+             name="article[title]"
+      placeholder="Title here."></br>
+      <label>Author</label></br>
+      <input type="text"
+             name="article[author]"
+      placeholder="Your name here."></br>
+      <label>Categories</label></br>
+      <div class="categories-grp">
+        <input id="art-design" type="checkbox" name="article[categories][]"value="art-design">
+        <label for="art-design">Art and Design</label>
+        <input id="culinary" type="checkbox" name="article[categories][]"value="culinary">
+        <label for="culinary">Culinary</label>
+        <input id="history" type="checkbox" name="article[categories][]"value="history">
+        <label for="history">History</label>
+        <input id="technology" type="checkbox" name="article[categories][]"value="technology">
+        <label for="technology">Technology</label>
+        <input id="sports" type="checkbox" name="article[categories][]"value="sports">
+        <label for="sports">Sports</label>
+      </div>
+      <!-- <input type="text"
+             name="article[categories][]"
+      placeholder="List your categories here."></br> -->
+     <label>Content</label></br>
+     <textarea type="text"
+               name="article[content]"
+        placeholder="Your content here."></textarea>
+     <input type="submit"
+           value="Publish">
+<!-- value of author should be user[username] -->
+    </form>
+  </div>
+</div>
+<footer>
+<div class="message">
+  <h1><%= message %></h1>
+</div>
+</footer>

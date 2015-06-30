@@ -11,18 +11,23 @@ var express           = require('express'),
     userController    = require('./controllers/users'),
     sessionController = require('./controllers/session');
 
+var PORT = process.env.PORT || 3000;
+var MONGOURI = process.env.MONGOLAB_URI ||
 
 //Views and layouts
 server.set('views', "./views");
 server.set('view engine', 'ejs');
 server.use(layouts);
 
+// Morgan Error Detection
+server.use(morgan('short'));
+
 //Static files
 server.use(express.static('./public'));
 
 //Sessions
 server.use(session({
-  secret:"secret",
+  secret:"mysecret",
   resave: true,
   saveUninitialized: false
 }));
@@ -31,15 +36,39 @@ server.use(session({
 server.use(bodyyParser.urlencoded({
   extended:true
 }));
+server.use(methodOverride('_method'))
 
 //Controllers
 server.use('/users', userController);
 server.use('/session', sessionController);
 
-//Database
-mongoose.connect(url);
 
+// Home Page
+
+server.get('/', function(req, res) {
+  res.render('welcome');
+});
+
+server.get('/about', function(req, res) {
+  res.render('about');
+});
+
+mongoose.connect(url);
 var db = mongoose.connection;
+
+db.on('error', function() {
+  console.log("Nope");
+});
+
+db.once('open', function() {
+  console.log("Database up and running");
+  server.listen(port, function() {
+    console.log("Server up and running");
+  });
+});
+
+
+/*var db = mongoose.connection;
 db.on('error', function(){
   console.log("N");
 });
@@ -49,7 +78,7 @@ db.once('open', function(){
   server.listen(PORT, function(){
     console.log("Server's up")
   });
-});
+});*/
 
 
 
