@@ -1,14 +1,17 @@
-var mongoose = require('mongoose'),
-    Schema   = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema   = mongoose.Schema;
 
-var userSchema = {
+var userSchema = new Schema({
   email: {type: String, required: true},
-  password: {type: String, required: true}
-};
+  password: {type: String, required: true},
+  username: { type: String, required: true}
+});
 
 var User = mongoose.model("User", userSchema);
 
-var User = function(client){
+module.exports = User;
+
+/*var User = function(client){
   this.name   = null;
   this.client = client;
 }
@@ -25,4 +28,4 @@ User.prototype.setName = function(name){
   this.name;
 }
 
-module.exports = User;
+module.exports = User; */

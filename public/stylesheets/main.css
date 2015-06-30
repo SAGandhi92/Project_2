@@ -95,6 +95,13 @@ button:hover{
   color: black;
 }
 
+footer {
+  height: 8vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
 #menuwrap,
 #content-wrapper,
 #nav-button > span {
@@ -239,4 +246,19 @@ ul#menu > li > a:link, a:visited {
 
 ul#menu > li > a:hover {
   color: #057A7F;
+}
+
+.container,
+#main:first-child {
+  padding-top: 3%;
+}
+
+#main, #main-new-art {
+  width: 60vw;
+  height: 60vh;
+  min-width: 500px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
 }

@@ -1,59 +1,60 @@
 var express           = require('express'),
-    server            = require(),
+    server            = express(),
     ejs               = require('ejs'),
-    bodyParser        = require(body-parser),
+    bodyParser        = require('body-parser'),
     morgan            = require('morgan'),
     mongoose          = require('mongoose'),
-    url               = require('mongodb://localhost:27017/wiki')
+    url               = 'mongodb://localhost:27017/wiki_db'
     methodOverride    = require('method-override'),
     expressLayout     = require('express-ejs-layouts'),
     session           = require('express-session'),
     userController    = require('./controllers/users'),
-    sessionController = require('./controllers/session');
+    sessionController = require('./controllers/article'),
+    bcrypt            = require('bcrypt');
 
-var PORT = process.env.PORT || 3000;
-var MONGOURI = process.env.MONGOLAB_URI ||
+var PORT = process.env.PORT || 27017;
+var MONGOURI = process.env.MONGOLAB_URI || url;
 
 //Views and layouts
 server.set('views', "./views");
 server.set('view engine', 'ejs');
-server.use(layouts);
+server.use(expressLayout);
 
 // Morgan Error Detection
-server.use(morgan('short'));
+ server.use(morgan('short'));
 
 //Static files
-server.use(express.static('./public'));
+ server.use(express.static('./public'));
 
 //Sessions
-server.use(session({
-  secret:"mysecret",
-  resave: true,
-  saveUninitialized: false
-}));
+ server.use(session({
+   secret:"mysecret",
+   resave: true,
+   saveUninitialized: false
+ }));
 
 //Forms
-server.use(bodyyParser.urlencoded({
-  extended:true
-}));
-server.use(methodOverride('_method'))
+ server.use(bodyParser.urlencoded({
+   extended:true
+ }));
+ server.use(methodOverride('_method'))
 
 //Controllers
 server.use('/users', userController);
-server.use('/session', sessionController);
+server.use('/article', sessionController);
 
 
 // Home Page
 
 server.get('/', function(req, res) {
-  res.render('welcome');
+  res.render('home');
 });
 
 server.get('/about', function(req, res) {
   res.render('about');
 });
 
-mongoose.connect(url);
+mongoose.connect(MONGOURI);
 var db = mongoose.connection;
 
 db.on('error', function() {
@@ -61,9 +62,9 @@ db.on('error', function() {
 });
 
 db.once('open', function() {
-  console.log("Database up and running");
-  server.listen(port, function() {
-    console.log("Server up and running");
+  console.log("Database running");
+  server.listen(PORT, function() {
+    console.log("Server running");
   });
 });
 
