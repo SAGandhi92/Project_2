@@ -13,7 +13,7 @@ var express           = require('express'),
     bcrypt            = require('bcrypt');
 
 var PORT = process.env.PORT || 27017;
-var MONGOURI = process.env.MONGOLAB_URI || url;
+var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wiki_db';
 
 //Views and layouts
 server.set('views', "./views");
@@ -67,33 +67,3 @@ db.once('open', function() {
     console.log("Server running");
   });
 });
-
-
-/*var db = mongoose.connection;
-db.on('error', function(){
-  console.log("N");
-});
-
-db.once('open', function(){
-  console.log("Yaass");
-  server.listen(PORT, function(){
-    console.log("Server's up")
-  });
-});*/
-
-
-
-
-
-//Login
-//router.get('/login', function(req,res){
-//res.render('users/login')
-//});
-//router.post('/login', function(req,res){
-//var loginAttempt = req.body.user;
-//User.findOne({username: loginAttempt.username}, function(err,user){
-//  if (user && user.password === loginAttempt.password){
-
-//  }
-//})
-//})
