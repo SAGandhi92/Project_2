@@ -5,7 +5,7 @@ function slideMenu() {
   $menuWrap.toggleClass('open');
 
 }
-var $navButton = $('#nav-button');
+
 
 function animateNav() {
   var $navButton = $(this);
@@ -24,9 +24,9 @@ function selectMenuItem() {
     }
   }
 }
-
-$navButton.on('click', slideMenu);
-$navButton.on('click', animateNav);
+var $navButton = $('#nav-button');
+$navButton.on('click', function(slideMenu));
+$navButton.on('click', function(animateNav));
 
 var $menu = $('#menu');
 var menuItems = $menu.children();

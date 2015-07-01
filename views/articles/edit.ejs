@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="main-new-art">
+  <div id="main">
     <form action="/articles/<%= article.title %>?_method=PATCH" method="post">
       <label>Title</label></br>
       <input type="text"
@@ -23,10 +23,9 @@
 
   </div>
 </div>
-<footer>
+
   <form action="/articles/<%= article.title %>?_method=DELETE" method="post">
         <input id="delete-button"
                type="submit"
                value="Delete Article">
   </form>
-</footer>

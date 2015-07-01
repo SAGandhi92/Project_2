@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="main-new-art">
+  <div id="main">
     <form action="/articles/:title" method="post">
       <label>Title</label></br>
       <input type="text"
@@ -10,19 +10,19 @@
              name="article[author]"
       placeholder="Your name here."></br>
       <label>Categories</label></br>
-      <div class="categories-grp">
-        <input id="history" type="checkbox" name="article[categories][]"value="art-design">
+      <div class="categories">
+        <input id="history" type="checkbox" name="article[categories][]"value="history">
         <label for="history">History</label>
-        <input id="literature" type="checkbox" name="article[categories][]"value="culinary">
+        <input id="literature" type="checkbox" name="article[categories][]"value="literature">
         <label for="literature">Literature</label>
-        <input id="Philosophy" type="checkbox" name="article[categories][]"value="history">
+        <input id="Philosophy" type="checkbox" name="article[categories][]"value="philosophy">
         <label for="Philosophy">Philosphy</label>
-        <input id="mythology" type="checkbox" name="article[categories][]"value="technology">
+        <input id="mythology" type="checkbox" name="article[categories][]"value="Mythology">
         <label for="mythology">Mythology</label>
       </div>
       <!-- <input type="text"
              name="article[categories][]"
-      placeholder="List your categories here."></br> -->
+      placeholder="List your category here."></br> -->
      <label>Content</label></br>
      <textarea type="text"
                name="article[content]"
@@ -33,8 +33,3 @@
     </form>
   </div>
 </div>
-<footer>
-<div class="message">
-  <h1><%= message %></h1>
-</div>
-</footer>
