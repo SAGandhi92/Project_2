@@ -76,7 +76,7 @@ router.post('/', function(req, res) {
   var newUser = new User(req.body.user);
 
   newUser.save(function(err, user) {
-    res.redirect(301, '/users/' + user._id);
+    res.redirect(301, '/home');
   });
 });
 
