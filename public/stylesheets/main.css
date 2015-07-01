@@ -4,46 +4,14 @@
   color: white;
 }
 
-label{
-  margin-bottom: 20px;
+body{
+  margin:0;
+  top:0;
 }
 
-.login{
+
+#search-bar{
   display: flex;
-  /*max-width: 10vw;
-  min-width: 320px;*/
-  flex-direction: column;
-  height: 30vh;
-  width: 50vw;
-  margin:auto;
-  overflow: hidden;
-  box-shadow: 0 0 0 0.5(rgba(255, 0, 0, 0.5);)
-}
-
-.login input{
-  display: none;
-}
-
-.login input+label{
-  color: white;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  background:#46494C;
-  border-bottom: 1px solid black;
-  padding: 10px;
-  -moz-transition: background: 0.75s;
-  -o-transition: background: 0.75s;
-  -webkit-transition:background: 0.75s;
-  transition: background: 0.75s;
-}
-
-.login input+label:hover{
-  background color: #DBF9F4;
-  color:black;
-}
-
-.search-bar{
   box-sizing: border-box;
   margin:0 auto;
 }
@@ -60,6 +28,8 @@ label{
   align-self: center;
   padding-top: 5em;
   cursor: pointer;
+  width: 50vw;
+  margin-left: auto;
 }
 
 .wiki:hover{
@@ -68,13 +38,13 @@ label{
 
 
 
-.name {
+#name {
   font-size: 3em;
   font-weight: 600;
   cursor: pointer;
 }
 
-.name:hover{
+#name:hover{
   color: #057A7F;
 }
 
@@ -107,7 +77,7 @@ footer {
   bottom: 0;
 }
 
-#menuwrap,
+#menu-wrapper,
 #content-wrapper,
 #nav-button > span {
    -webkit-transition: all 0.5s ease;
@@ -157,7 +127,7 @@ footer {
   display: block;
 }
 
-#nav-button.open span:nth-child(1) {
+.open span:nth-child(1) {
   -webkit-transform: translateY(6px) rotate(45deg);
      -moz-transform: translateY(6px) rotate(45deg);
       -ms-transform: translateY(6px) rotate(45deg);
@@ -195,7 +165,7 @@ footer {
 }
 
 #menu-wrapper.open{
-  left:0;
+  left:40px;
 }
 
 #menu-wrapper.open li{
@@ -258,7 +228,7 @@ ul#menu > li > a:hover {
   padding-top: 3%;
 }
 
-#main, #main-new-art {
+#main {
   width: 60vw;
   height: 60vh;
   min-width: 500px;

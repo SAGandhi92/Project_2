@@ -5,6 +5,7 @@ function slideMenu() {
   $menuWrap.toggleClass('open');
 
 }
+var $navButton = $('#nav-button');
 
 function animateNav() {
   var $navButton = $(this);
@@ -24,7 +25,6 @@ function selectMenuItem() {
   }
 }
 
-var $navButton = $('#nav-button');
 $navButton.on('click', slideMenu);
 $navButton.on('click', animateNav);
 
