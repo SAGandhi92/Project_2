@@ -21,16 +21,16 @@ router.get('/', function(req, res) {
 
 // Get new article form
 router.get('/new', function(req, res) {
-  if(req.session.currentUser ==="http:localhost:3000/articles/new") {
-   res.render('articles/new'), 
-  //    message: "Write your article."
-  //  });
-  //} else {
+  if(req.session.currentUser) {
+    res.render('articles/new', {
+      message: "Write your article."
+    });
+  } else {
     // Log in to write article
-  //  res.render('users/login', {
-  //    message: "You must log in to write your article."
-  //  });
-//  };
+    res.render('users/login', {
+      message: "You must log in to write your article."
+    });
+  };
 
 });
 
