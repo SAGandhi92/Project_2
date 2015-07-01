@@ -21,13 +21,16 @@ router.get('/', function(req, res) {
 
 // Get new article form
 router.get('/new', function(req, res) {
-  console.log("New article route recieved. Not rendering.");
-  // if(req.session.currentUser) {
-    res.render('articles/new');
-  // } else {
+  if(req.session.currentUser ==="http:localhost:3000/articles/new") {
+  //  res.render('articles/new', {
+  //    message: "Write your article."
+  //  });
+  //} else {
     // Log in to write article
-  //   res.render('users/login');
-   //};
+  //  res.render('users/login', {
+  //    message: "You must log in to write your article."
+  //  });
+//  };
 
 });
 
@@ -74,7 +77,7 @@ router.patch('/:title', function(req, res) {
       articleUpdate = req.body.article;
       articleUpdate.updated_at = Date.now();
   Article.update({ title: articleTitle }, articleUpdate, function(err, result) {
-    res.redirect(301, '/articles' + articleUpdate.title);
+    res.redirect(301, '/articles/' + articleUpdate.title);
   });
 });
 

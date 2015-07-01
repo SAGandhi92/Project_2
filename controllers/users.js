@@ -8,7 +8,7 @@ console.log('exported');
 
 // Get new user form
 router.get('/new', function(req, res) {
-  if (req.headers.referer === "http://localhost:27017/users/login" && createCounter !==0) {
+  if (req.headers.referer === "http://localhost:3000/users/login" && createCounter !==0) {
     createCounter++;
     res.render('users/new', {
       message: "No such username. Please sign up."
@@ -76,7 +76,7 @@ router.post('/', function(req, res) {
   var newUser = new User(req.body.user);
 
   newUser.save(function(err, user) {
-    res.redirect(301, '/home');
+    res.redirect(301, '/users/' + user);
   });
 });
 

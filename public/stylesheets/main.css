@@ -257,6 +257,7 @@ ul#menu > li > a:hover {
 form{
   border: 1px #E6FDFF;
   margin: 1em;
+  display:block;
 }
 
 input{
