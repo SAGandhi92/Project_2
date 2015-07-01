@@ -4,11 +4,11 @@ var express       = require('express'),
     loginCounter  = 0,
     createCounter = 0;
 
-console.log('users.js successfully exported');
+console.log('exported');
 
 // Get new user form
 router.get('/new', function(req, res) {
-  if (req.headers.referer === "http://localhost:3000/users/login" && createCounter !==0) {
+  if (req.headers.referer === "http://localhost:27017/users/login" && createCounter !==0) {
     createCounter++;
     res.render('users/new', {
       message: "No such username. Please sign up."
