@@ -12,7 +12,7 @@ var express           = require('express'),
     sessionController = require('./controllers/article'),
     bcrypt            = require('bcrypt');
 
-var PORT = process.env.PORT || 27017;
+var PORT = process.env.PORT || 3000;
 var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wiki_db';
 
 //Views and layouts

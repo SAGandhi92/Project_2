@@ -1,5 +1,7 @@
+
 <div class="container">
   <div id="main">
+
     <form action="/articles/<%= article.title %>?_method=PATCH" method="post">
       <label>Title</label></br>
       <input type="text"
@@ -18,9 +20,7 @@
             name="article[content]"><%= article.content %></textarea>
      <input type="submit"
            value="Publish">
-<!-- value of author should be user[username] -->
     </form>
-
   </div>
 </div>
 

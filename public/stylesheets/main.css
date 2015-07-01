@@ -253,6 +253,10 @@ ul#menu > li > a:hover {
 
 }
 
+form{
+  border: 1px white;
+}
+
 input{
   box-sizing: border-box;
   border: 1px black;
