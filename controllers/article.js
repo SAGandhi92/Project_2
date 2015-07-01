@@ -22,11 +22,11 @@ router.get('/', function(req, res) {
 // Get new article form
 router.get('/new', function(req, res) {
   console.log("New article route recieved. Not rendering.");
- if(req.session.currentUser) {
+  // if(req.session.currentUser) {
     res.render('articles/new');
- } else {
-    Log in to write article
-    res.render('users/login');
+  // } else {
+    // Log in to write article
+  //   res.render('users/login');
    };
 
 });
