@@ -9,11 +9,11 @@
     <script type="text/javascript" src="/js/script.js"></script>
   </head>
   <body>
-    <input type="text" id="search-bar" placeholder="enter search"/>
 
-    <script type="text/javascript">
 
-    $('input').keyup(function(event){
+
+
+    <!-- $('input').keyup(function(event){
       event.preventDefault();
       var search =$(this).val();
       $('#text').html(search);
@@ -24,7 +24,7 @@
         success: function(data, status, jqXHR){
           var newText="";
           for(i=0; i<data.Search.length; i++){
-            newText += 'mongodb://localhost:27017/wiki_db'+'data.Search[i].mongodb+""'>'+data.Search[i].Title+'</a><br>;
+            newText += 'mongodb://localhost:3000/wiki_db/'+'data.Search[i].wiki_db+'>'+data.Search[i].Title+'</a><br>;
           },
           $("#text").html(newText);
         },
@@ -33,10 +33,12 @@
         }
       });
     })
-    </script>
+     -->
+
 
     <%- body %>
 
-  <script type="text/javascript" src="/js/script.js"></script>
+
   </body>
+  <script type="text/javascript" src="/js/script.js"></script>
 </html>
