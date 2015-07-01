@@ -27,7 +27,7 @@ router.get('/new', function(req, res) {
   // } else {
     // Log in to write article
   //   res.render('users/login');
-   };
+   //};
 
 });
 
