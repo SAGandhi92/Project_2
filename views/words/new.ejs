@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div id="main">
+    <form action="/word/:word" method="post">
+      <label>Word</label></br>
+      <input type="text"
+             name="word[word]"
+      placeholder=" Your Word here."></br>
+      <label>Author</label></br>
+      <input type="text"
+             name="word[author]"
+      placeholder="Your name here."></br>
+      <label>Languages</label></br>
+      <div class="language">
+        <input id="english" type="checkbox" name="word[language][]"value="english">
+        <label for="english">British English</label>
+        <input id="american_english" type="checkbox" name="word[language][]"value="american_english">
+        <label for="american_english">American English</label>
+        <input id="french" type="checkbox" name="word[language][]"value="french">
+        <label for="french">Français</label>
+      </div>
+
+     <label>Content</label></br>
+     <textarea type="text"
+               name="word[content]"
+        placeholder="Your content here."></textarea>
+     <input type="submit"
+           value="Publish">
+    </form>
+  </div>
+</div>

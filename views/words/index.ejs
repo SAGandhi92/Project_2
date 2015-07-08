@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div id="main">
+    <div id="index">Word Index
+      <ul>
+        <% word.forEach(function (word, i) { %>
+        <li>
+          <a href="/words/<%=word.word%>">
+            <%= word.word  %>
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</div>

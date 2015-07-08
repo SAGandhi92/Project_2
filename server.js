@@ -4,7 +4,7 @@ var express           = require('express'),
     bodyParser        = require('body-parser'),
     morgan            = require('morgan'),
     mongoose          = require('mongoose'),
-    url               = 'mongodb://localhost:27017/wiki_db'
+    url               = 'mongodb://localhost:27017/dictionary_db'
     methodOverride    = require('method-override'),
     expressLayout     = require('express-ejs-layouts'),
     session           = require('express-session'),
@@ -13,7 +13,7 @@ var express           = require('express'),
     bcrypt            = require('bcrypt');
 
 var PORT = process.env.PORT || 3000;
-var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wiki_db';
+var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/dictionary_db';
 
 //Views and layouts
 server.set('views', "./views");
@@ -41,7 +41,7 @@ server.use(expressLayout);
 
 //Controllers
 server.use('/users', userController);
-server.use('/article', sessionController);
+server.use('/word', sessionController);
 
 
 // Home Page
@@ -54,6 +54,7 @@ server.get('/about', function(req, res) {
   res.render('about');
 });
 
+//Database
 mongoose.connect(MONGOURI);
 var db = mongoose.connection;
 

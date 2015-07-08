@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div id="main">
+
+    <form action="/word/<%= word.word %>?_method=PATCH" method="post">
+      <label>Word</label></br>
+      <input type="text"
+             name="word[word]"
+            value="<%= word.word %>"></br>
+      <label>Author</label></br>
+      <input type="text"
+             name="word[author]"
+            value="<%= word.author %>"></br>
+      <label>Language</label></br>
+      <input type="text"
+             name="word[language][]"
+            value="<%= word.language %>"></br>
+     <label>Definition</label></br>
+     <textarea type="text"
+            name="word[content]"><%= word.content %></textarea>
+     <input type="submit"
+           value="Publish">
+    </form>
+  </div>
+</div>
+
+  <form action="/words/<%= word.word %>?_method=DELETE" method="post">
+        <input id="delete-button"
+               type="submit"
+               value="Delete Word">
+  </form>

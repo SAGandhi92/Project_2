@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div id="main">
+    <div id="word">
+        <h1><%= word.word %></h1>
+        <h3>Author: <%= word.author %></h3>
+      </div>
+          <%- word.content %>
+        <ul>
+          <% var string = word.created_at.toString(); %>
+          <% var timeCreated = string.split(" ").slice(0, 5); %>
+          <li>This page was created on <%= timeCreated[0] + " " + timeCreated[1] + " " + timeCreated[2] + " " + timeCreated[3] + ", at " + timeCreated[4] + "."%></li></br>
+          <% word.language.forEach(function (language, i) { %>
+          <li>Langauge: <%= word.language[i] %></li>
+          <% }); %>
+        </ul>
+      </li>
+      </div>
+    </div>
+  </div>
+</div>
+<span><a href="/words/<%= word.word %>/edit"></a> Edit this Word.</span>
