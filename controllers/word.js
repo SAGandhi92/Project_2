@@ -6,13 +6,13 @@ console.log("succesful");
 
 // Get all words
 router.get('/', function(req, res) {
- Article.find({}, function(err, articlesArray) {
+ Word.find({}, function(err, wordsArray) {
    if (err) {
      console.log(err);
    } else {
      res.render('word/index'), {
-       article: articlesArray,
-       message: "Click to view articles."
+       words: wordsArray,
+
      });
    };
  });
@@ -22,7 +22,6 @@ router.get('/', function(req, res) {
 router.get('/new', function(req, res) {
   if(req.session.currentUser) {
     res.render('words/new', {
-      message: "Write your article."
     });
   } else {
     // Log in to write word
@@ -53,7 +52,7 @@ router.get('/:word', function(req, res) {
 
   Word.findOne({ word: wordWord }, function(err, foundWord) {
     foundWord.content = marked(foundWord.content);
-    res.render('words/show', {
+    res.render('words/show'), {
       word: foundWord
     });
   });
@@ -63,7 +62,7 @@ router.get('/:word', function(req, res) {
 router.get('/:word/edit', function(req, res) {
   var articleTitle = req.params.word;
 
-  Word.findOne({ word: articleTitle }, function(err, foundWord) {
+  Word.findOne({ word: wordWord }, function(err, foundWord) {
     res.render('words/edit'), {
       word: foundWord
     });
@@ -85,7 +84,7 @@ router.delete('/:word', function(req, res) {
   var wordWord = req.params.word;
 
   Word.remove(
-    { title: wordWord }, function(err, result) {
+    { word: wordWord }, function(err, result) {
       res.redirect(301, '/words');
   });
 });

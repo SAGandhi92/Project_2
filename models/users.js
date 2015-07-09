@@ -11,21 +11,17 @@ var User = mongoose.model("User", userSchema);
 
 module.exports = User;
 
-/*var User = function(client){
-  this.name   = null;
-  this.client = client;
-}
 
-User.prototype.send = function(unwrapped){
-  this.client.send(JSON.stringify(unwrapped))
-}
+/*
+var mongoose = require("mongoose"),
+    Schema     = mongoose.Schema;
 
-User.prototype.hasName = function{
-  return this.name !== null;
-}
+var userSchema = Schema ({
+    username: {type: String, required: true},
+    password: {type: String, required: true}
+});
 
-User.prototype.setName = function(name){
-  this.name;
-}
+var User = mongoose.model("User", userSchema);
 
-module.exports = User; */
+module.exports = User;
+*/
