@@ -1,6 +1,6 @@
 var express = require("express"),
-    router     = express.Router(),
-    User    = require("../models/user.js");
+    router  = express.Router(),
+    User    = require("../models/users.js");
 
 // New
 
@@ -14,7 +14,7 @@ router.post("/", function (req, res) {
     var newUser = new User(req.body.user);
     //now save the new user into our database
     newUser.save(function (err, user) {
-        res.redirect(301, "../users/new");
+        res.redirect(301, "../users/index");
     });
 });
 

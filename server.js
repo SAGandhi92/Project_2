@@ -9,7 +9,7 @@ var express           = require('express'),
     expressLayout     = require('express-ejs-layouts'),
     session           = require('express-session'),
     userController    = require('./controllers/users'),
-    sessionController = require('./controllers/article'),
+    sessionController = require('./controllers/word'),
     bcrypt            = require('bcrypt');
 
 var PORT = process.env.PORT || 3000;

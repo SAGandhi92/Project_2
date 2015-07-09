@@ -4,12 +4,16 @@
   color: white;
 }
 
-body{
-  margin:0;
-  top:0;
+.container{
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
 }
 
-
+.main{
+  height: 500vh;
+  margin: 0 auto;
+}
 #search-bar{
   display: flex;
   box-sizing: border-box;
@@ -17,7 +21,7 @@ body{
 }
 
 
-.wiki{
+.webster{
   display:flex;
   flex-direction:column;
   flex:1 0 10em;
@@ -32,7 +36,7 @@ body{
   margin-left: auto;
 }
 
-.wiki:hover{
+.webster :hover{
   flex-basis: 20em;
 }
 
@@ -48,7 +52,7 @@ body{
   color: #057A7F;
 }
 
-.log {
+.login {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -56,7 +60,7 @@ body{
   transition: opacity 500ms ease-in-out;
 }
 
-.log li {
+.login li {
   font-size: 1em;
   line-height: 2em;
 }
@@ -93,7 +97,6 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 10px 10px 0 10px;
   background-color: #E6FDFF;
   box-shadow: -6px 0px 10px 1px #646464;
   width: 2em;
@@ -223,53 +226,4 @@ ul#menu > li > a:link, a:visited {
 
 ul#menu > li > a:hover {
   color: #057A7F;
-}
-
-.container,
-#main:first-child {
-  padding-top: 3%;
-}
-
-#main {
-  width: 60vw;
-  height: 60vh;
-  min-width: 500px;
-  min-height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.categories{
-  color: white
-  margin:0;
-  top:inherit;
-}
-
-#history,#literature,#philosophy,#mythology{
-  margin: 0 auto;
-  box-sizing: border-box;
-  color: white;
-  box-shadow: darkgray;
-
-}
-
-form{
-  border: 1px #E6FDFF;
-  margin: 1em;
-  display:block;
-}
-
-input{
-  box-sizing: border-box;
-  border: 1px black;
-
-}
-
-#main-new{
-  margin: 0 auto;
-  box-sizing: border-box;
-  color: white;
-  box-shadow: darkgray;
-
 }

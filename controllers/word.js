@@ -5,19 +5,16 @@ var express = require('express'),
 console.log("succesful");
 
 // Get all words
-router.get('/', function(req, res) {
+/*router.get('/', function(req, res) {
  Word.find({}, function(err, wordsArray) {
    if (err) {
      console.log(err);
-   } else {
+   }else {
      res.render('word/index'), {
-       words: wordsArray,
-
-     });
-   };
- });
+       words: wordsArray
+  })
 });
-
+*/
 // Get new word form
 router.get('/new', function(req, res) {
   if(req.session.currentUser) {
@@ -47,7 +44,7 @@ router.post('/:word', function(req, res) {
 });
 
 // Show words
-router.get('/:word', function(req, res) {
+/*router.get('/:word', function(req, res) {
   var wordWord = req.params.word;
 
   Word.findOne({ word: wordWord }, function(err, foundWord) {
@@ -57,9 +54,9 @@ router.get('/:word', function(req, res) {
     });
   });
 });
-
+*/
 // Edit word
-router.get('/:word/edit', function(req, res) {
+/* router.get('/:word/edit', function(req, res) {
   var articleTitle = req.params.word;
 
   Word.findOne({ word: wordWord }, function(err, foundWord) {
@@ -68,7 +65,7 @@ router.get('/:word/edit', function(req, res) {
     });
   });
 });
-
+*/
 // Update word
 router.patch('/:word', function(req, res) {
   var wordWord = req.params.word,
