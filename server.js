@@ -4,7 +4,7 @@ var express           = require('express'),
     bodyParser        = require('body-parser'),
     morgan            = require('morgan'),
     mongoose          = require('mongoose'),
-    url               = 'mongodb://localhost:27017/dictionary_db'
+    url               = 'mongodb://localhost:3000/dictionary_db'
     methodOverride    = require('method-override'),
     expressLayout     = require('express-ejs-layouts'),
     session           = require('express-session'),
@@ -58,7 +58,7 @@ server.get('/about', function(req, res) {
 mongoose.connect(MONGOURI);
 var db = mongoose.connection;
 
-db.on('error', function() {
+db.on('error', function(err) {
   console.log("Nope");
 });
 
