@@ -57,7 +57,7 @@ router.post('/:word', function(req, res) {
 */
 // Edit word
 /* router.get('/:word/edit', function(req, res) {
-  var articleTitle = req.params.word;
+  var wordWord = req.params.word;
 
   Word.findOne({ word: wordWord }, function(err, foundWord) {
     res.render('words/edit'), {

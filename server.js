@@ -10,7 +10,7 @@ var express           = require('express'),
     session           = require('express-session'),
     userController    = require('./controllers/users'),
     sessionController = require('./controllers/word'),
-    bcrypt            = require('bcrypt');
+    passport          = require('passport');
 
 var PORT = process.env.PORT || 3000;
 var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/dictionary_db';
@@ -65,6 +65,6 @@ db.on('error', function(err) {
 db.once('open', function() {
   console.log("Database running");
   server.listen(PORT, function() {
-    console.log("Server running");
+  console.log("Server running");
   });
 });
