@@ -12,7 +12,7 @@ router.get("/new", function (req, res) {
 
 router.post("/", function (req, res) {
     var newUser = new User(req.body.user);
-    //now save the new user into our database
+
     newUser.save(function (err, user) {
         res.redirect(301, "../users/index");
     });
