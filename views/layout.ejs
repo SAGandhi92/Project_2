@@ -18,13 +18,13 @@
       var search =$(this).val();
       $('#text').html(search);
       $.ajax({
-        url: 'mongodb://localhost:27017/wiki_db',
+        url: '',
         method:"GET",
         data: { s:search},
         success: function(data, status, jqXHR){
           var newText="";
           for(i=0; i<data.Search.length; i++){
-            newText += 'mongodb://localhost:3000/wiki_db/'+'data.Search[i].wiki_db+'>'+data.Search[i].Title+'</a><br>;
+            newText += ''</a><br>;
           },
           $("#text").html(newText);
         },
