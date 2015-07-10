@@ -10,21 +10,18 @@
   </head>
   <body>
 
-
-
-
-    <!-- $('input').keyup(function(event){
+$('input').keyup(function(event){
       event.preventDefault();
       var search =$(this).val();
       $('#text').html(search);
       $.ajax({
-        url: '',
+        url: 'http://www.dictionaryapi.com/api/v1/references/collegiate/xml/test?key=4598514d-155a-49e0-a2e1-dc60816fd624',
         method:"GET",
         data: { s:search},
         success: function(data, status, jqXHR){
           var newText="";
           for(i=0; i<data.Search.length; i++){
-            newText += ''</a><br>;
+            newText += 'http://www.dictionaryapi.com/api/v1/references/collegiate/xml/test?key=4598514d-155a-49e0-a2e1-dc60816fd624'</a><br>;
           },
           $("#text").html(newText);
         },
@@ -33,10 +30,6 @@
         }
       });
     })
-     -->
-
-
-    <%- body %>
 
 
   </body>
